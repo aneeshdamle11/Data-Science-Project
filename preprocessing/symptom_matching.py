@@ -74,11 +74,12 @@ for s in total_symptoms:
     symp=s.split()
     str_sym=set()
     for comb in range(1, len(symp)+1):
+        print(sym)
         for subset in combinations(symp, comb):
             subset=' '.join(subset)
-            print("Here!")
             subset = synonyms(subset) 
             str_sym.update(subset)
+            print(subset)
     str_sym.add(s)
     str_sym = ' '.join(str_sym).replace('_',' ').lower()
     str_sym = list(set(str_sym.split()))
