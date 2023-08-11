@@ -1,0 +1,10 @@
+{% extends "predictionapp/layout.html" %}
+
+{% block body %}
+    <h1>Symptoms entered by user:</h1>
+    <ul>
+        {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
