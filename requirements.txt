@@ -1,2 +1,5 @@
 Django
 nltk
+pandas
+requests
+bs4

@@ -4,8 +4,11 @@ from django import forms
 
 from . import models
 
+raw_user_symptoms = []
+
 class UserSymptomForm(forms.Form):
     symptomlist = forms.CharField(label="Cough, Cold, Head pain")
+
 
 # Create your views here.
 
@@ -25,9 +28,10 @@ def usersymptoms(request):
         if form.is_valid():
             # Taking symptoms from user as input
             user_symptoms = form.cleaned_data["symptomlist"]
-            processed_user_symptoms = models.rawpreprocessing(user_symptoms)
+            raw_user_symptoms = models.rawpreprocessing(user_symptoms)
+            found_symptoms = models.initpreprocessing(raw_user_symptoms)
             return render(request, "predictionapp/displayraw.html", {
-                "symptoms": processed_user_symptoms
+                "symptoms": raw_user_symptoms
             })
         else:
             # If the form is invalid, re-render the page with existing information
@@ -35,3 +39,7 @@ def usersymptoms(request):
                 "form": UserSymptomForm()
             })
 
+def rawsymptoms(request):
+    return render(request, "predictionapp/displayraw.html", {
+        "symptoms": raw_user_symptoms
+    })
