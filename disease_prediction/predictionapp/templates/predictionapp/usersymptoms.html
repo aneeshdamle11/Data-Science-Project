@@ -1,0 +1,11 @@
+{% extends "predictionapp/layout.html" %}
+
+{% block body %}
+    <h1>Symptoms:</h1>
+    <form action="{% url 'predictionapp:usersymptoms' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+
+{% endblock %}

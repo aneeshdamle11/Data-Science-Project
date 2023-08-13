@@ -1,9 +1,0 @@
-numpy
-matplotlib
-pandas
-scikit-learn
-nltk
-requests
-bs4
-seaborn
-wordcloud

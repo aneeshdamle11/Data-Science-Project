@@ -1,0 +1,17 @@
+{% extends "predictionapp/layout.html" %}
+
+{% block body %}
+    <h1>Final List of Symptoms:</h1>
+    <ol>
+        {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+        {% endfor %}
+    </ol>
+    <h1>Predicted Diseases:</h1>
+    <ol>
+        {% for disease in diseases %}
+            <li>{{ disease }}</li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'predictionapp:usersymptoms' %}">Main page</a>
+{% endblock %}
