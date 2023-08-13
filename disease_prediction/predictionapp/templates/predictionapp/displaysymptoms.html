@@ -1,0 +1,20 @@
+{% extends "predictionapp/layout.html" %}
+
+{% block body %}
+    <h1>Symptoms entered by user:</h1>
+    <ol start="0">
+        {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+        {% endfor %}
+    </ol>
+    {% if optionform %}
+        <form action="{% url 'predictionapp:process_symptoms' %}" method="post">
+            {% csrf_token %}
+            {{ optionform }}
+            <input type="submit">
+        </form>
+    {% else %}
+        <h2>Above are the raw symptoms</h2>
+    {% endif %}
+    <a href="{% url 'predictionapp:usersymptoms' %}">Main page</a>
+{% endblock %}
