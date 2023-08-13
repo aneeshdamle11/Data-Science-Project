@@ -1,1 +1,2 @@
-python disease_prediction/manage.py runserver
+cd disease_prediction
+python manage.py runserver

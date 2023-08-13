@@ -16,7 +16,7 @@ from statistics import mean
 lemmatizer = WordNetLemmatizer()
 splitter = RegexpTokenizer(r'\w+')
 
-PATH = os.environ['PWD'] + "/data"
+PATH = os.environ['PWD'] + "/../data"
 
 df_comb = pd.read_csv(PATH + "/dis_sym_dataset_comb.csv") # Disease combination
 df_norm = pd.read_csv(PATH + "/dis_sym_dataset_norm.csv") # Individual Disease
