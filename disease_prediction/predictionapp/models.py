@@ -1,6 +1,6 @@
 from django.db import models
 import pandas as pd
-import requests, operator
+import requests, operator, os
 from bs4 import BeautifulSoup
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import RegexpTokenizer
@@ -16,7 +16,7 @@ from statistics import mean
 lemmatizer = WordNetLemmatizer()
 splitter = RegexpTokenizer(r'\w+')
 
-PATH = "/home/aneeshd/Desktop/COEP/TY/Sem6/DS/Project/Data-Science-Project-/preprocessing"
+PATH = os.environ['PWD'] + "/data"
 
 df_comb = pd.read_csv(PATH + "/dis_sym_dataset_comb.csv") # Disease combination
 df_norm = pd.read_csv(PATH + "/dis_sym_dataset_norm.csv") # Individual Disease
