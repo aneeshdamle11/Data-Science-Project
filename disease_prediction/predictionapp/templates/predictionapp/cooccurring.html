@@ -1,0 +1,18 @@
+{% extends "predictionapp/layout.html" %}
+
+{% block body %}
+    <h1>Co-occurring symptoms:</h1>
+    <h2>Do you have have of these symptoms?</h2>
+    <h2>If yes, enter the indices (space-separated)</h2>
+    <h2>"no" to stop</h2>
+    <ol start="0">
+        {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+        {% endfor %}
+    </ol>
+    <form action="{% url 'predictionapp:co_occurring' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+    </form>
+{% endblock %}

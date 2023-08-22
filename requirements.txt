@@ -1,0 +1,6 @@
+Django
+nltk
+pandas
+requests
+bs4
+scikit-learn

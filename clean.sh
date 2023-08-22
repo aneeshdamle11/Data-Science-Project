@@ -1,0 +1,2 @@
+pyclean .
+deactivate

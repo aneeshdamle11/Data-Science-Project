@@ -1,4 +1,0 @@
-selenium
-Beautiful soup
-pickle
-google search modules.
